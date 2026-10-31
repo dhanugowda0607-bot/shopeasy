@@ -1,0 +1,523 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glow & Grace | Women's Store</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #fffafa;
+    color: #39313b;
+}
+
+/* NAVBAR */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background: white;
+    box-shadow: 0 2px 10px #f1e5eb;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    gap: 15px;
+}
+
+.logo {
+    color: #d65c91;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #443b43;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #d65c91;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search {
+    padding: 10px;
+    border: 1px solid #e7cbd8;
+    border-radius: 20px;
+    width: 170px;
+}
+
+.cart {
+    background: #d65c91;
+    color: white;
+    border: none;
+    padding: 11px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    margin: 30px 7%;
+    min-height: 380px;
+    border-radius: 20px;
+    background: linear-gradient(110deg, #fce1eb, #f2e4f7);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 45px;
+    gap: 20px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: 48px;
+    color: #9e416f;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+.shop-btn {
+    background: #d65c91;
+    color: white;
+    padding: 13px 28px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.hero img {
+    width: 42%;
+    height: 290px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* COMMON SECTIONS */
+section {
+    padding: 30px 7%;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.heading h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: #9e416f;
+}
+
+.heading p {
+    color: #888;
+    margin-top: 8px;
+}
+
+/* CATEGORIES */
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.category {
+    text-align: center;
+    background: #fcebf2;
+    padding: 25px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+    background: #f8dce9;
+}
+
+.category span {
+    font-size: 40px;
+}
+
+.category h3 {
+    margin-top: 10px;
+}
+
+/* PRODUCTS */
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.product {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px #eee2e8;
+    transition: 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-6px);
+}
+
+.product img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.info {
+    padding: 16px;
+}
+
+.info h3 {
+    margin-bottom: 8px;
+}
+
+.info p {
+    color: #888;
+    font-size: 13px;
+}
+
+.price {
+    color: #d65c91;
+    font-size: 19px;
+    font-weight: bold;
+    margin: 13px 0;
+}
+
+.old-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.add-btn {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    background: #d65c91;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background: #ae3e70;
+}
+
+/* PROMOTION */
+.promo {
+    margin: 30px 7%;
+    background: #f4e5f4;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 15px;
+}
+
+.promo h2 {
+    color: #9e416f;
+    font-family: Georgia, serif;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+    background: #44313e;
+    color: white;
+    text-align: center;
+    padding: 35px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin-top: 10px;
+    color: #e7cbd8;
+}
+
+/* RESPONSIVE */
+@media(max-width: 850px) {
+    .products, .categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header {
+        flex-wrap: wrap;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+}
+
+@media(max-width: 550px) {
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .search {
+        width: 130px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 25px;
+    }
+
+    .hero img {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .products, .categories {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .product img {
+        height: 160px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <div class="logo">Glow & Grace ♡</div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#products">Shop</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="actions">
+        <input type="text" id="search"
+        class="search" placeholder="Search...">
+
+        <button class="cart" onclick="showCart()">
+            🛍️ <span id="count">0</span>
+        </button>
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+<div class="hero">
+    <div>
+        <h1>Style is a way<br>to express yourself.</h1>
+        <p>Discover fashion that makes every moment special.</p>
+        <button class="shop-btn"
+        onclick="document.getElementById('products').scrollIntoView()">
+            Explore Collection →
+        </button>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800"
+    alt="Women's fashion shopping">
+</div>
+
+<!-- CATEGORIES -->
+<section id="categories">
+    <div class="heading">
+        <h2>Explore Categories</h2>
+        <p>Everything you love, all in one place ♡</p>
+    </div>
+
+    <div class="categories">
+        <div class="category" onclick="filterCategory('Dress')">
+            <span>👗</span>
+            <h3>Dresses</h3>
+        </div>
+
+        <div class="category" onclick="filterCategory('Bag')">
+            <span>👜</span>
+            <h3>Handbags</h3>
+        </div>
+
+        <div class="category" onclick="filterCategory('Shoes')">
+            <span>👠</span>
+            <h3>Footwear</h3>
+        </div>
+
+        <div class="category" onclick="filterCategory('Jewellery')">
+            <span>💍</span>
+            <h3>Jewellery</h3>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+    <div class="heading">
+        <h2>Our Best Sellers</h2>
+        <p>Find your new favourites ✨</p>
+    </div>
+
+    <div class="products" id="productList">
+
+        <div class="product" data-name="Floral Dress" data-category="Dress">
+            <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=500" alt="Floral dress">
+            <div class="info">
+                <h3>Floral Dress</h3>
+                <p>Elegant everyday collection</p>
+                <div class="price">₹1,299 <span class="old-price">₹1,799</span></div>
+                <button class="add-btn" onclick="addToCart('Floral Dress',1299)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="product" data-name="Pink Handbag" data-category="Bag">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500" alt="Pink handbag">
+            <div class="info">
+                <h3>Pink Handbag</h3>
+                <p>Chic and stylish handbag</p>
+                <div class="price">₹999 <span class="old-price">₹1,399</span></div>
+                <button class="add-btn" onclick="addToCart('Pink Handbag',999)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="product" data-name="Heels" data-category="Shoes">
+            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500" alt="Women's heels">
+            <div class="info">
+                <h3>Elegant Heels</h3>
+                <p>Beautiful party footwear</p>
+                <div class="price">₹1,499 <span class="old-price">₹1,999</span></div>
+                <button class="add-btn" onclick="addToCart('Elegant Heels',1499)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="product" data-name="Jewellery" data-category="Jewellery">
+            <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=500" alt="Fashion jewellery">
+            <div class="info">
+                <h3>Fashion Jewellery</h3>
+                <p>Simple and elegant accessories</p>
+                <div class="price">₹599 <span class="old-price">₹899</span></div>
+                <button class="add-btn" onclick="addToCart('Fashion Jewellery',599)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROMOTION -->
+<div class="promo">
+    <h2>A Little Something Special ♡</h2>
+    <p>Discover your favourite styles at lovely prices.</p>
+    <br>
+    <button class="shop-btn"
+    onclick="document.getElementById('products').scrollIntoView()">
+        Shop Now
+    </button>
+</div>
+
+<!-- FOOTER -->
+<footer id="contact">
+    <h2>Glow & Grace ♡</h2>
+    <p>Fashion • Beauty • Lifestyle</p>
+    <p>Contact: hello@glowandgrace.example</p>
+    <p>© 2026 Glow & Grace. All rights reserved.</p>
+</footer>
+
+<script>
+let cart = [];
+
+function addToCart(name, price) {
+    cart.push({name, price});
+    document.getElementById("count").innerText = cart.length;
+    alert(name + " added to your cart!");
+}
+
+function showCart() {
+    if(cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    let total = 0;
+    let message = "YOUR CART\n\n";
+
+    cart.forEach((item, index) => {
+        message += (index + 1) + ". " +
+        item.name + " - ₹" + item.price + "\n";
+        total += item.price;
+    });
+
+    message += "\nTotal: ₹" + total;
+    alert(message);
+}
+
+// SEARCH
+document.getElementById("search")
+.addEventListener("input", function() {
+    let value = this.value.toLowerCase();
+
+    document.querySelectorAll(".product").forEach(product => {
+        product.style.display =
+        product.dataset.name.toLowerCase().includes(value)
+        ? "block" : "none";
+    });
+});
+
+// CATEGORY FILTER
+function filterCategory(category) {
+    document.getElementById("search").value = "";
+
+    document.querySelectorAll(".product").forEach(product => {
+        product.style.display =
+        product.dataset.category === category
+        ? "block" : "none";
+    });
+
+    document.getElementById("products").scrollIntoView();
+}
+</script>
+
+</body>
+</html>
